@@ -1,5 +1,5 @@
 #Build container
-FROM node:alpine as builder
+FROM node:alpine AS builder
 
 WORKDIR /usr/app_src/
 
