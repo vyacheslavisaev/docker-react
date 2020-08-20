@@ -1,5 +1,5 @@
 #Build container
-FROM node:alpine AS builder
+FROM node:alpine
 
 WORKDIR /usr/app_src/
 
@@ -11,4 +11,4 @@ RUN npm run build
 # Deploy container
 FROM nginx:alpine
 EXPOSE 80
-COPY --from=builder /usr/app_src/build /usr/share/nginx/html
+COPY --from=0 /usr/app_src/build /usr/share/nginx/html
